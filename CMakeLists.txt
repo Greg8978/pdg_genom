@@ -60,11 +60,10 @@ find_package(Boost REQUIRED COMPONENTS)# system)
 #Fact.msg      ObjectList.msg          Object.msg)
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+ add_service_files(
+   FILES
+   AddStream.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -74,13 +73,10 @@ find_package(Boost REQUIRED COMPONENTS)# system)
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#    std_msgs
-#    spencer_tracking_msgs
-#    niut_msgs
-#    toaster_msgs
-# )
+generate_messages(
+   DEPENDENCIES
+    std_msgs
+)
 ###################################
 ## catkin specific configuration ##
 ###################################
@@ -123,7 +119,7 @@ ${Boost_INCLUDE_DIRS}  $ENV{HOME}/devel/include $ENV{HOME}/openrobots/include/
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(pdg pdg_generate_messages_cpp)
+add_dependencies(pdg pdg_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(pdg_node

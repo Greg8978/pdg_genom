@@ -29,7 +29,7 @@
 #include <toaster_msgs/RobotList.h>
 #include <toaster_msgs/HumanList.h>
 #include <toaster_msgs/ObjectList.h>
-#include <toaster_msgs/AddStream.h>
+#include <pdg/AddStream.h>
 #include <toaster_msgs/PutInHand.h>
 #include <toaster_msgs/RemoveFromHand.h>
 
@@ -123,8 +123,8 @@ bool putAtJointPosition(toaster_msgs::Entity& msgEntity, unsigned int id, std::s
 // Services //
 //////////////
 
-bool addStream(toaster_msgs::AddStream::Request &req,
-        toaster_msgs::AddStream::Response & res) {
+bool addStream(pdg::AddStream::Request &req,
+        pdg::AddStream::Response & res) {
 
     morseHuman_ = req.morseHuman;
     niutHuman_ = req.niutHuman;
